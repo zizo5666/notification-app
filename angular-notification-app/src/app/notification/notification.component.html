@@ -1,0 +1,61 @@
+<div class="main-div">
+<div class="example-container2">
+
+  <div class="new_add_form">
+
+
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()" >
+
+      <mat-grid-list cols="2" rowHeight="100px">
+        <mat-grid-tile><h5>Notification Form</h5></mat-grid-tile>
+      </mat-grid-list>
+      <mat-form-field>
+        <input matInput id="fname" #input formControlName="fname"  placeholder="First Name">
+        <mat-error *ngIf="addForm.get('fname').hasError('required')">First Name is required</mat-error>
+        <mat-error *ngIf="addForm.get('fname').hasError('pattern')">String only</mat-error>
+        <mat-error *ngIf="addForm.get('fname').hasError('minlength')">Min length is 2</mat-error>
+        <mat-error *ngIf="addForm.get('fname').hasError('maxlength')">Min length is 35</mat-error>
+
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput id="lname" #input formControlName="lname"  placeholder="Last Name" >
+        <mat-error *ngIf="addForm.get('lname').hasError('required')">Last Name is required</mat-error>
+        <mat-error *ngIf="addForm.get('lname').hasError('pattern')">String only</mat-error>
+        <mat-error *ngIf="addForm.get('lname').hasError('minlength')">Min length is 2</mat-error>
+        <mat-error *ngIf="addForm.get('lname').hasError('maxlength')">Min length is 35</mat-error>
+      </mat-form-field><br>
+
+      <p>How would you prefer to be notified?</p> 
+
+      <mat-checkbox formControlName="emailCheckbox">Email</mat-checkbox><br>
+      <mat-form-field *ngIf="addForm.get('emailCheckbox').value == true">
+        <input matInput id="email" #input formControlName="email"  placeholder="Email Address">
+        <mat-error *ngIf="addForm.get('email').hasError('email')">Incorrect Email format</mat-error>
+        <mat-error *ngIf="addForm.get('email').hasError('minlength')">Min Length is 10</mat-error>
+        <mat-error *ngIf="addForm.get('email').hasError('maxlength')">Max Length is 50</mat-error>
+      </mat-form-field><br><br>
+
+      <mat-checkbox formControlName="phoneCheckbox">Phone Number</mat-checkbox><br>
+      <mat-form-field *ngIf="addForm.get('phoneCheckbox').value == true">
+        <input matInput id="phone" #input formControlName="phone"  placeholder="Phone">
+        <mat-error *ngIf="addForm.get('phone').hasError('pattern')">Number only</mat-error>
+        <mat-error *ngIf="addForm.get('phone').hasError('minlength')">Length has to be 10 digits</mat-error>
+        <mat-error *ngIf="addForm.get('phone').hasError('maxlength')">Length has to be 10 digits</mat-error>
+      </mat-form-field><br><br>
+
+      <mat-form-field>
+        <mat-select  placeholder="Supervisor" formControlName="supervisor">
+          <mat-option  *ngFor="let supervisor of supervisorsList" [value]="supervisor.identificationNumber">{{supervisor.firstName + ' ' + supervisor.lastName}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="addForm.get('supervisor').hasError('required')">Supervisor selection is required</mat-error>
+      </mat-form-field>
+
+
+      <button mat-flat-button color="primary" type="submit" >Submit</button>
+      <div class="login_error_msg">  {{ errorStatus }}  </div>
+    </form>
+    <p>{{submitStatus}}</p>
+</div>
+
+</div>
+</div>

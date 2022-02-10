@@ -1,0 +1,120 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Helvetica Neue"; }
+
+h5 {
+  color: rgb(20, 20, 20);
+  font-size: 24px;
+  font-weight: bold;
+
+
+}
+
+
+table {
+  width: 100%;
+  min-width: 500px;
+}
+
+td.mat-cell, td.mat-footer-cell, th.mat-header-cell{
+  min-width: 100px;
+  max-width: 200px;
+}
+
+.new_add_form{
+  width: 80%;
+}
+
+.login_error_msg{
+  padding-top: 10px;
+  color: red;
+  font-size: 16px;
+}
+
+.mat-grid-tile .mat-figure {
+  justify-content: flex-start !important ;
+  align-items: center;
+
+}
+
+mat-form-field {
+  width:80%;
+  margin-right: 1.5rem;
+  }
+
+mat-card-content {
+  min-width:400px;
+
+ }
+
+ button{
+  margin-right: 1.5rem !important;
+ }
+
+ form{
+
+   padding: 0;
+ }
+
+.main-div{
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.example-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 2%;
+}
+
+
+
+  .example-container > button {
+    color: blue;
+    width: 50%;
+  }
+
+  mat-form-field.mat-form-field {
+    font-size: 15px;
+  }
+
+  .example-container2 {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    padding: 2%;
+  }
+
+  .example-container2 > #add_emp_btn {
+    width: 30%;
+  }
+
+  .example-container2 > button {
+    color: blue;
+    width: 500px;
+  }
+
+  .mat-header-cell{
+    font-weight: bold;
+    color: blue;
+    font-size: 15px;
+    padding: 0.5rem;
+    border-bottom: 2px solid lightgrey !important;
+  }
+
+  .add_form_div {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 2%;
+  }
+
+  .add_form_cell {
+  border: none !important;
+  }
+
+
